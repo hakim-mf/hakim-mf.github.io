@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Firman Hakim | Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- PENGATURAN TEMA: SCIENTIFIC DARK MODE --- */
+        :root {
+            --bg-color: #0F172A;       
+            --card-bg: #1E293B;        
+            --primary-color: #F8FAFC;  
+            --text-color: #94A3B8;     
+            --accent-color: #14B8A6;   
+            --border-color: #334155;   
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5; 
+        }
+
+        /* --- BLOK 1: HERO SECTION --- */
+        .hero {
+            padding: 2rem 1.5rem; 
+            text-align: center;
+            background-color: var(--bg-color); 
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 3px solid var(--border-color);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05); 
+            border-color: var(--accent-color);
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .hero h2 {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* --- PENGATURAN KONTEN TENGAH (WRAPPER) --- */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem; 
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        /* --- BLOK 2: TENTANG SAYA --- */
+        .about-section {
+            margin-bottom: 2.5rem; 
+        }
+
+        .about-text {
+            font-size: 1rem;
+            color: var(--text-color);
+            text-align: justify;
+            margin-bottom: 0.8rem;
+        }
+
+        /* --- BLOK 3: KATALOG PROYEK --- */
+        .projects-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.2rem; 
+            margin-bottom: 1rem; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3); 
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-logo {
+            width: 45px;
+            height: 45px;
+            border-radius: 6px;
+            object-fit: cover;
+            margin-right: 1rem;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-color); 
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .tech-stack {
+            margin-bottom: 0.8rem; 
+        }
+
+        .tech-stack span {
+            display: inline-block;
+            background-color: #134E4A; 
+            color: #5EEAD4; 
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.4rem;
+            margin-bottom: 0.4rem;
+        }
+
+        details {
+            margin-top: 0.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        summary {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--accent-color);
+            cursor: pointer;
+            outline: none;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        summary:hover {
+            color: #5EEAD4;
+        }
+        
+        .project-details {
+            padding-top: 0.5rem;
+        }
+
+        .details-split {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
+            align-items: flex-start;
+        }
+
+        .details-text-left {
+            flex: 1; 
+        }
+
+        .feature-list {
+            list-style-type: disc;
+            list-style-position: inside; 
+            color: var(--text-color);
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+
+        .feature-list li {
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-list li::marker {
+            color: var(--accent-color);
+        }
+
+        .project-screenshot-container.split {
+            width: 300px; 
+            flex-shrink: 0; 
+            border-radius: 6px;
+            overflow: hidden; 
+            border: 1px solid var(--border-color);
+            margin-bottom: 0; 
+        }
+
+        @media (max-width: 600px) {
+            .details-split {
+                flex-direction: column-reverse; 
+            }
+            .project-screenshot-container.split {
+                width: 100%; 
+            }
+        }
+
+        .project-screenshot {
+            width: 100%;
+            height: auto;
+            display: block; 
+            object-fit: cover;
+        }
+
+        .full-text p {
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        .full-text strong {
+            color: #CBD5E1; 
+        }
+
+        .btn-download {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #042F2E; 
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            transition: opacity 0.3s;
+        }
+
+        .btn-download:hover {
+            opacity: 0.8;
+        }
+
+        /* --- BLOK 4: DONATIONWARE (DUKUNGAN) --- */
+        .support-container {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem; 
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .support-container h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .support-container p {
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-kofi, .btn-saweria {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            margin: 0.4rem;
+            transition: transform 0.2s, opacity 0.3s;
+        }
+
+        .btn-kofi { background-color: #FF5E5B; color: white; }
+        .btn-saweria { background-color: #E2A012; color: white; }
+        .btn-kofi:hover, .btn-saweria:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        /* --- BLOK 5: FOOTER & KONTAK --- */
+        footer {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 1.5rem; 
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-bottom: 1rem;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #5EEAD4;
+        }
+
+        .footer-text {
+            font-size: 0.8rem;
+            color: #64748B;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <img src="profile.png" alt="Muhammad Firman Hakim, S.T." class="profile-img">
+        
+        <h1>Muhammad Firman Hakim, S.T.</h1>
+        <h2>Geophysics & Computational Developer</h2>
+    </section>
+
+    <div class="container">
+        
+        <section class="about-section">
+            <h2 class="section-title">About Me</h2>
+            <p class="about-text">
+                I am a Geophysics Engineering graduate (2022–2026) from UPN "Veteran" Yogyakarta, graduating with <em>Cum Laude</em> honors (3.66 GPA). I have a profound interest in the integration of earth sciences and computer science (computational geophysics). 
+            </p>
+            <p class="about-text">
+                My primary focus is designing and developing scientific software to efficiently solve geophysical modeling problems. I am committed to producing ready-to-use software with computational methodologies that are transparent, validated, and scientifically accountable. I believe that scientific instruments should be accessible to all, which is why all the software I develop here is provided completely free of charge.
+            </p>
+        </section>
+
+        <section class="projects-section">
+            <h2 class="section-title">Software & Projects</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    <img src="gim-logo.png" alt="GIM Logo" class="project-logo">
+                    <h3 class="card-title">GIM (Gravity Interactive Modelling)</h3>
+                </div>
+                
+                <div class="tech-stack">
+                    <span>Gravity</span><span>Forward Modelling</span><span>Subsurface Analysis</span><span>3D Geometry</span>
+                </div>
+
+                <p>Interactive modeling software for synthetic gravity anomalies. Designed as an educational instrument with an intuitive Graphical User Interface (GUI) to bridge the gap between theoretical formulas and practical interpretation.</p>
+                
+                <details>
+                    <summary>View Specifications & Download</summary>
+                    <div class="project-details">
+                        
+                        <div class="details-split">
+                            <div class="details-text-left">
+                                <p><strong>Key Features:</strong></p>
+                                <ul class="feature-list">
+                                    <li><strong>Real-time Visualization:</strong> Instant spatial visualization of gravity anomaly (<i>g<sub>z</sub></i>) variations on the Map Canvas.</li>
+                                    <li><strong>Multi-Body Modeling:</strong> Create complex subsurface scenarios by combining multiple geometric bodies, including Spheres, Rectangular Prisms, and Fault models.</li>
+                                    <li><strong>Cross-Section Analysis:</strong> Integrated slicing tool (A-A') to directly compare gravity profile curves against subsurface model sections.</li>
+                                    <li><strong>Data Management:</strong> Save and reload projects in JSON format, export results to CSV for external analysis, and capture high-quality map images.</li>
+                                </ul>
+                            </div>
+                            <div class="project-screenshot-container split">
+                                <img src="gim-ui.png" alt="GIM Software GUI" class="project-screenshot">
+                            </div>
+                        </div>
+
+                        <div class="full-text">
+                            <p><strong>Computational Methodology:</strong> The calculation engine utilizes high-precision analytical solutions. For spherical geometries, it implements the <strong>Telford et al. (1990)</strong> formula. For rectangular prisms, it employs the <strong>Plouff (1976)</strong> closed-form solution in Arctan form to ensure superior numerical stability and avoid singularities.</p>
+                            <p><strong>Recommended Specifications:</strong> Windows 10/11 (64-bit) | Intel Core i3 / AMD Ryzen 3 | 4 GB RAM | 1366 x 768 Display | 500 MB Disk Space</p>
+                        </div>
+
+                        <a href="https://drive.google.com/drive/folders/1VnSiDyO27U07l8wLa9kS9PsG-NBUibUL?usp=sharing" target="_blank" class="btn-download">Download GIM (Windows .rar)</a>
+                    </div>
+                </details>
+            </div>
+
+            <div class="card" style="opacity: 0.6; border-style: dashed;">
+                <div class="card-header">
+                    <div class="project-logo" style="background-color: var(--border-color);"></div> 
+                    <h3 class="card-title">In Development...</h3>
+                </div>
+                <p>The next desktop software project is currently in the computational design phase. It will be announced on this page soon.</p>
+            </div>
+        </section>
+
+        <section class="support-container">
+            <h3>Support the Development</h3>
+            <p>All software on this page is provided 100% free without any feature limitations. If these tools help your research or work, consider supporting their continued development. All support can be done <strong>completely anonymously</strong>.</p>
+            <a href="https://ko-fi.com/hakimanmu" target="_blank" class="btn-kofi">☕ Support via Ko-fi</a>
+            <a href="https://saweria.co/hakimanmu" target="_blank" class="btn-saweria">🪙 Support via Saweria</a>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="contact-info">
+            <h3>Let's Collaborate</h3>
+            <p>Open for discussions, feedback, and professional collaborations.</p>
+            <a href="mailto:hakim.muh.firman@gmail.com">hakim.muh.firman@gmail.com</a>
+        </div>
+        <p class="footer-text">
+            © 2026 Muhammad Firman Hakim.
+        </p>
+    </footer>
+
+</body>
+</html>
