@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Firman Hakim | Portfolio</title>
-    
+
+    <title>Geophysics Software Portfolio | Muhammad Firman Hakim</title>
+    <meta name="description" content="Download free computational geophysics software. Featuring GIM (Gravity Interactive Modelling) for synthetic gravity anomaly and MATE for automated magnetic data reduction.">
+    <meta name="keywords" content="geophysics software, software geofisika gratis, GIM software, Gravity Interactive Modelling, MATE software, Magnetic Automated Tabulation Engine, percepatan gravitasi, anomali gravitasi sintetik, komputasi geofisika, python geophysics, IGRF calculation, diurnal correction, Muhammad Firman Hakim">
+    <meta name="author" content="Muhammad Firman Hakim">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -331,6 +334,16 @@
             color: #64748B;
             margin-top: 1rem;
         }
+
+        /* --- Gaya khusus untuk screenshot memanjang (Full Width) --- */
+        .project-screenshot-container.wide {
+            width: 100%;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 6px;
+            overflow: hidden; 
+            border: 1px solid var(--border-color);
+        }
     </style>
 </head>
 <body>
@@ -394,6 +407,46 @@
                         </div>
 
                         <a href="https://drive.google.com/drive/folders/1VnSiDyO27U07l8wLa9kS9PsG-NBUibUL?usp=sharing" target="_blank" class="btn-download">Download GIM (Windows .rar)</a>
+                    </div>
+                </details>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <img src="mate-logo.png" alt="MATE Logo" class="project-logo">
+                    <h3 class="card-title">MATE (Magnetic Automated Tabulation Engine)</h3>
+                </div>
+                
+                <div class="tech-stack">
+                    <span>Magnetic</span><span>Automated Processing</span><span>Data Reduction</span><span>Live Tabulation</span>
+                </div>
+
+                <p>A specialized desktop application designed to act as both a live field tabulator and an automated reduction engine for geomagnetic data. Built for efficiency, MATE eliminates manual spreadsheet calculations by providing a streamlined, end-to-end processing workflow.</p>
+                
+                <details>
+                    <summary>View Specifications & Download</summary>
+                    <div class="project-details">
+                        
+                        <div class="full-text">
+                            <p><strong>Key Features:</strong></p>
+                            <ul class="feature-list">
+                                <li><strong>Live Tabulation & Smart Import:</strong> Input data manually via an interactive spreadsheet interface with auto-formatting, or intelligently import Excel/CSV files using an automated column-matching wizard.</li>
+                                <li><strong>Automated Reduction Workflow:</strong> Executes a rapid 5-step processing sequence including Station Time selection, PPM averaging, Main Field correction, and Diurnal synchronization.</li>
+                                <li><strong>Quality Control (QC) Visuals:</strong> Built-in Standard Deviation (STD) thresholding that automatically flags or hides unstable station blocks using intuitive color-coding.</li>
+                                <li><strong>Advanced Data Management:</strong> Export high-fidelity calculation results to Excel (.xlsx) or CSV, fully retaining tabular styling and merged cells for presentation-ready reports.</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-screenshot-container wide">
+                            <img src="mate-ui.png" alt="MATE Software GUI Dashboard" class="project-screenshot">
+                        </div>
+
+                        <div class="full-text">
+                            <p><strong>Computational Methodology:</strong> The calculation engine integrates multiple data science libraries to process geophysical values. It utilizes the <strong>pyIGRF14</strong> library for highly accurate International Geomagnetic Reference Field calculations (valid from 1900 through 2030). For diurnal correction, the software employs <strong>NumPy</strong> linear interpolation to precisely synchronize rover measurement times with base station time-series data.</p>
+                            <p><strong>Recommended Specifications:</strong> Windows 10/11 (64-bit) | Intel Core i3 / AMD Ryzen 3 | 4 GB RAM | 1366 × 768 Display | 1 GB Disk Space</p>
+                        </div>
+
+                        <a href="https://drive.google.com/drive/folders/1j9buhkNE1_oy9hma33PtmmVJaNfjl9Hx?usp=sharing" target="_blank" class="btn-download">Download MATE (Windows .rar)</a>
                     </div>
                 </details>
             </div>
