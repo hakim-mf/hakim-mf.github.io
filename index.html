@@ -331,6 +331,21 @@
             color: #5EEAD4;
         }
 
+        /* --- Pengaturan Jajaran Tautan Sosial --- */
+        .social-links {
+            margin-top: 0.8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem; /* Jarak antar teks */
+        }
+
+        .social-links .divider {
+            color: var(--border-color);
+            font-size: 0.8rem;
+            user-select: none; /* Agar titik tidak ikut ter-block saat disalin */
+        }
+
         .footer-text {
             font-size: 0.8rem;
             color: #64748B;
@@ -475,7 +490,15 @@
         <div class="contact-info">
             <h3>Let's Collaborate</h3>
             <p>Open for discussions, feedback, and professional collaborations.</p>
-            <a href="mailto:hakim.muh.firman@gmail.com">hakim.muh.firman@gmail.com</a>
+            
+            <div class="social-links">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hakim.muh.firman@gmail.com" target="_blank">Email</a>
+                <span class="divider">•</span>
+                <a href="https://linkedin.com/in/hakim-mf" target="_blank">LinkedIn</a>
+                <span class="divider">•</span>
+                <a href="https://github.com/hakim-mf" target="_blank">GitHub</a>
+            </div>
+            
         </div>
         <p class="footer-text">
             © 2026 Muhammad Firman Hakim.
